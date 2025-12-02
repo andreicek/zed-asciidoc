@@ -10,3 +10,9 @@
 ([(minus_metadata) (plus_metadata)] @injection.content (#set! injection.language "yml"))
 
 ((inline) @injection.content (#set! injection.language "markdown_inline"))
+
+((line_comment) @injections.content
+  (#set! injection.language "comment"))
+
+((block_comment) @injections.content
+  (#set! injection.language "comment"))
