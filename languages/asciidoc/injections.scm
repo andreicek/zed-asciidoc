@@ -11,5 +11,8 @@
 
 ((inline) @injection.content (#set! injection.language "markdown_inline"))
 
-((comment) @injections.content
+((line_comment) @injections.content
+  (#set! injection.language "comment"))
+
+((block_comment) @injections.content
   (#set! injection.language "comment"))
