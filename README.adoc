@@ -1,3 +1,5 @@
 = Zed AsciiDoc
 
-This extension adds support for the https://asciidoc.org/:"AsciiDoc" language for Zed.
+This extension adds support for the link:https://asciidoc.org/[AsciiDoc] language for Zed.
+
+It is based on link:https://github.com/cathaysia/tree-sitter-asciidoc/[tree-sitter-asciidoc].
