@@ -8,4 +8,5 @@ repository = "https://github.com/andreicek/zed-asciidoc"
 
 [grammars.asciidoc]
 repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
-commit = "736ab072da132283b5d9397100d70f14b4fb71ae"
+commit = "0ecc13042b7352ddc3f7b8b31432e262711d44e4"
+path = "tree-sitter-asciidoc"
