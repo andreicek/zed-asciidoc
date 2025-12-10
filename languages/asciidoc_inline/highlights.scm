@@ -3,18 +3,18 @@
 ;   (passthrough)
 ; ] @markup.raw @nospell
 
-; (emphasis) @markup.strong
+(emphasis) @emphasis.strong
 
-; (ltalic) @markup.italic
+(ltalic) @emphasis
 
-; (highlight) @markup.italic
+(highlight) @emphasis
 
-; [
-;   (link_url)
-;   (email)
-; ] @markup.link.url @markup.link
+[
+  (link_url)
+  (email)
+] @link_url @link_text
 
-; (uri_label) @markup.link.label
+(uri_label) @link_text
 
 [
   "["
@@ -35,9 +35,9 @@
 (xref
   (id) @link_text @link_uri .)
 
-; (xref
-;   (id) @markup.link.label
-;   (reftext) @markup.link @markup.link.url)
+(xref
+  (id) @link_text
+  (reftext) @link_text @link_url)
 
 [
   (macro_name)
