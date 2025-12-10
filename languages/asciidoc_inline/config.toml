@@ -1,0 +1,3 @@
+name = "AsciiDoc Inline"
+grammar = "asciidoc_inline"
+hidden = true
