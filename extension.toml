@@ -2,7 +2,7 @@ id = "asciidoc"
 name = "AsciiDoc"
 version = "0.0.1"
 schema_version = 1
-authors = ["Andrei Zvonimir Crnkovic <andrei@0x7f.dev>"]
+authors = ["Dunya Kirkali <dunyakirkali@gmail.com>", "Andrei Zvonimir Crnkovic <andrei@0x7f.dev>"]
 description = "Support for AsciiDoc syntax"
 repository = "https://github.com/andreicek/zed-asciidoc"
 
