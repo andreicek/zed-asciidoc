@@ -12,7 +12,7 @@
 [
   (link_url)
   (email)
-] @link_url @link_text
+] @link_uri @link_text
 
 (uri_label) @link_text
 
