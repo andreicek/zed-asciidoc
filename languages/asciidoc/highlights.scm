@@ -1,49 +1,168 @@
-;From nvim-treesitter/nvim-treesitter
-(atx_heading (inline) @text.title)
+(document_title) @title @variant
 
 [
-  (atx_h1_marker)
-  (atx_h2_marker)
-  (atx_h3_marker)
-  (atx_h4_marker)
-  (atx_h5_marker)
-  (atx_h6_marker)
+    (title1)
+    (title2)
+    (title3)
+    (title4)
+    (title5)
+] @title
+
+(email) @link_uri @link_text
+
+(author_line
+  ";" @punctuation.delimiter)
+
+(revision_line
+  "," @punctuation.delimiter
+  ":" @punctuation.delimiter)
+
+(list_continuation) @constant
+
+[
+  (firstname)
+  (middlename)
+  (lastname)
+] @attribute
+
+(revnumber) @number
+
+(revdate) @string.special
+
+(revremark) @string
+
+(table_block_marker) @punctuation.special
+
+(table_cell_attr) @attribute
+
+(table_cell
+  "|" @punctuation.special)
+
+[
+  (breaks)
+  (hard_wrap)
+  (quoted_block_md_marker)
+  (quoted_paragraph_marker)
+  (open_block_marker)
+  (listing_block_start_marker)
+  (listing_block_end_marker)
+  (literal_block_marker)
+  (passthrough_block_marker)
+  (quoted_block_marker)
+  (ntable_block_marker)
+  (callout_marker)
 ] @punctuation.special
 
-[
-  (link_title)
-  (indented_code_block)
-  (fenced_code_block)
-] @text.literal
+(ntable_cell
+  "!" @punctuation.special)
+
+; (checked_list_marker_unchecked) @markup.list.unchecked
+
+; (checked_list_marker_checked) @markup.list.checked
+
+; [
+;   (list_marker_star)
+;   (list_marker_hyphen)
+;   (list_marker_dot)
+;   (list_marker_digit)
+;   (list_marker_geek)
+;   (list_marker_alpha)
+; ] @markup.list
 
 [
-  (fenced_code_block_delimiter)
+  (line_comment)
+  (block_comment)
+] @comment ; @spell
+
+[
+  (document_attr_marker)
+  (element_attr_marker)
 ] @punctuation.delimiter
 
-(code_fence_content) @none
+(document_attr
+  (attr_name) @property)
 
-[
-  (link_destination)
-] @text.uri
+(element_attr
+  (attr_value) @attribute)
 
-[
-  (link_label)
-] @text.reference
+(block_title
+  (block_title_marker) @punctuation.special) @attribute
 
-[
-  (list_marker_plus)
-  (list_marker_minus)
-  (list_marker_star)
-  (list_marker_dot)
-  (list_marker_parenthesis)
-  (thematic_break)
-] @punctuation.special
+; (ident_block) @markup.raw.block
 
-[
-  (block_continuation)
-  (block_quote_marker)
-] @punctuation.special
+(callout_list_marker) @punctuation.special
 
-[
-  (backslash_escape)
-] @string.escape
+; (block_macro
+;   (block_macro_name) @keyword
+;   "::" @punctuation.delimiter
+;   (target)? @markup.link
+;   "[" @punctuation.bracket
+;   "]" @punctuation.bracket)
+
+(attribute_name) @attribute
+
+; (attribute_value) @variable.parameter
+
+; (admonition
+;   (admonition_important) @comment.error
+;   ":" @comment.error)
+
+; (admonition
+;   (admonition_warning) @comment.warning
+;   ":" @comment.warning)
+
+; (admonition
+;   (admonition_caution) @comment.warning
+;   ":" @comment.warning)
+
+; (admonition
+;   (admonition_note) @comment.note
+;   ":" @comment.note)
+
+; (admonition
+;   (admonition_tip) @comment.note
+;   ":" @comment.note)
+
+; ((section_block
+;   (element_attr
+;     (element_attr_marker) @comment.note
+;     (attr_value) @attribute @comment.note
+;     (element_attr_marker) @comment.note)
+;   (delimited_block
+;     (delimited_block_start_marker) @comment.note
+;     (delimited_block_end_marker) @comment.note))
+;   (#any-of? @attribute "NOTE" "TIP"))
+
+; ((section_block
+;   (element_attr
+;     (element_attr_marker) @comment.warning
+;     (attr_value) @attribute @comment.warning
+;     (element_attr_marker) @comment.warning)
+;   (delimited_block
+;     (delimited_block_start_marker) @comment.warning
+;     (delimited_block_end_marker) @comment.warning))
+;   (#any-of? @attribute "CAUTION" "WARNING"))
+
+; ((section_block
+;   (element_attr
+;     (element_attr_marker) @comment.error
+;     (attr_value) @attribute @comment.error
+;     (element_attr_marker) @comment.error)
+;   (delimited_block
+;     (delimited_block_start_marker) @comment.error
+;     (delimited_block_end_marker) @comment.error))
+;   (#eq? @attribute "IMPORTANT"))
+
+; ((element_attr
+;   (element_attr_marker)
+;   (attr_value) @_attr
+;   (element_attr_marker))
+;   (listing_block
+;     (listing_block_body) @markup.raw.block)
+;   (#not-lua-match? @_attr "^[^,]*,%s*(%w+)")
+;   (#not-any-of? @_attr
+;     "a2s" "barcode" "blockdiag" "bpmn" "bytefield" "d2" "dbml" "diagrams" "ditaa" "dpic" "erd"
+;     "gnuplot" "graphviz" "lilypond" "meme" "mermaid" "msc" "nomnoml" "pikchr" "plantuml" "shaape"
+;     "smcat" "structurizr" "svgbob" "symbolator" "syntrax" "tikz" "umlet" "vega" "wavedrom"))
+
+; (line) @spell

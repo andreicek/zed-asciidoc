@@ -6,6 +6,11 @@ authors = ["Andrei Zvonimir Crnkovic <andrei@0x7f.dev>"]
 description = "Support for AsciiDoc syntax"
 repository = "https://github.com/andreicek/zed-asciidoc"
 
+[grammars.asciidoc_inline]
+repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
+commit = "0ecc13042b7352ddc3f7b8b31432e262711d44e4"
+path = "tree-sitter-asciidoc_inline"
+
 [grammars.asciidoc]
 repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
 commit = "0ecc13042b7352ddc3f7b8b31432e262711d44e4"

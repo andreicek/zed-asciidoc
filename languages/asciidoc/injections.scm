@@ -1,12 +1,14 @@
-(fenced_code_block
-  (info_string
-    (language) @injection.language)
-  (code_fence_content) @injection.content)
+((paragraph) @injection.content
+  (#set! injection.include-children)
+  (#set! injection.language "asciidoc_inline"))
 
-((html_block) @injection.content (#set! injection.language "html"))
+((line) @injection.content
+  (#set! injection.include-children)
+  (#set! injection.language "asciidoc_inline"))
 
-(document . (section . (thematic_break) (_) @injection.content (thematic_break)) (#set! injection.language "yaml"))
+; Inject comment
+((line_comment) @injection.content
+  (#set! injection.language "comment"))
 
-([(minus_metadata) (plus_metadata)] @injection.content (#set! injection.language "yml"))
-
-((inline) @injection.content (#set! injection.language "markdown_inline"))
+((block_comment) @injection.content
+  (#set! injection.language "comment"))
