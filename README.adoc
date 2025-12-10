@@ -16,7 +16,9 @@ zed-asciidoc/
 │   │   ├── injections.scm      # Grammar injections
 │   │   └── config.toml
 │   └── asciidoc_inline/
-│       └── highlights.scm      # Inline syntax highlighting
+│       ├── highlights.scm      # Inline syntax highlighting
+│       ├── injections.scm      # Inline grammar injections
+│       └── config.toml
 ├── test/
 │   └── highlight/              # Highlight tests
 └── extension.toml              # Extension configuration
