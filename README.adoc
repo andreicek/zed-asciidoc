@@ -19,8 +19,6 @@ zed-asciidoc/
 │       ├── highlights.scm      # Inline syntax highlighting
 │       ├── injections.scm      # Inline grammar injections
 │       └── config.toml
-├── test/
-│   └── highlight/              # Highlight tests
 └── extension.toml              # Extension configuration
 ----
 
@@ -28,10 +26,9 @@ zed-asciidoc/
 
 When contributing changes to highlight queries:
 
-1. Add tests for new features in `test/highlight/`
-2. Run tests to ensure they pass: `make test`
-3. Verify highlighting manually in Zed
-4. Submit a pull request
+1. Make changes to the appropriate `.scm` files in `languages/asciidoc/` or `languages/asciidoc_inline/`
+2. Verify highlighting manually in Zed
+3. Submit a pull request
 
 == License
 
