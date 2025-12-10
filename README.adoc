@@ -1,4 +1,4 @@
-= The Intrepid Chronicles
+= Zed AsciiDoc
 
 This extension adds support for the link:https://asciidoc.org/[AsciiDoc] language for Zed.
 
