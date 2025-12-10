@@ -37,7 +37,7 @@
 
 (xref
   (id) @link_text
-  (reftext) @link_text @link_url)
+  (reftext) @link_text @link_uri)
 
 [
   (macro_name)
