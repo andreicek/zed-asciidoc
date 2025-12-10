@@ -1,5 +1,36 @@
-= Zed AsciiDoc
+= The Intrepid Chronicles
 
 This extension adds support for the link:https://asciidoc.org/[AsciiDoc] language for Zed.
 
 It is based on link:https://github.com/cathaysia/tree-sitter-asciidoc/[tree-sitter-asciidoc].
+
+== Development
+
+=== Project Structure
+
+----
+zed-asciidoc/
+├── languages/
+│   ├── asciidoc/
+│   │   ├── highlights.scm      # Block-level syntax highlighting
+│   │   ├── injections.scm      # Grammar injections
+│   │   └── config.toml
+│   └── asciidoc_inline/
+│       └── highlights.scm      # Inline syntax highlighting
+├── test/
+│   └── highlight/              # Highlight tests
+└── extension.toml              # Extension configuration
+----
+
+=== Contributing
+
+When contributing changes to highlight queries:
+
+1. Add tests for new features in `test/highlight/`
+2. Run tests to ensure they pass: `make test`
+3. Verify highlighting manually in Zed
+4. Submit a pull request
+
+== License
+
+See link:LICENSE[LICENSE] file for details.
