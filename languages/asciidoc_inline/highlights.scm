@@ -5,7 +5,7 @@
 
 (emphasis) @emphasis
 
-(italic) @emphasis
+(ltalic) @emphasis
 
 (highlight) @emphasis
 
