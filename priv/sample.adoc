@@ -1,0 +1,641 @@
+= AsciiDoc Features Reference Guide
+:sectnums:
+:toc: macro
+:toclevels: 3
+:xrefstyle: short
+:icons: font
+:source-highlighter: rouge
+:stem: latexmath
+
+toc::[]
+
+== Document Structure
+
+=== Headings and Sections
+
+Document headings use the equals sign (=) syntax. The number of equals signs determines the heading level.
+
+```
+= Document Title (Level 0 - used once per document)
+== Section (Level 1)
+=== Subsection (Level 2)
+==== Sub-subsection (Level 3)
+===== Level 4
+====== Level 5
+```
+
+[NOTE]
+====
+In your project, you use `= ` for the main title and `==`, `===`, `====` for sections, subsections, and sub-subsections.
+====
+
+=== Section Anchors
+
+Add anchors to create cross-references:
+
+```
+[#ways-of-working]
+=== Ways of Working
+```
+
+== Text Formatting
+
+=== Bold Text
+
+Use double asterisks for bold:
+
+```
+*This text is bold*
+```
+
+Result: *This text is bold*
+
+=== Italic Text
+
+Use single underscores for italic:
+
+```
+_This text is italic_
+```
+
+Result: _This text is italic_
+
+=== Bold Italic
+
+Use double underscores and double asterisks:
+
+```
+***bold and italic***
+```
+
+=== Monospace/Code
+
+Use backticks for inline code:
+
+```
+`code snippet`
+```
+
+Result: `code snippet`
+
+== Lists
+
+=== Unordered Lists
+
+Use hyphens or asterisks for unordered lists:
+
+```
+- First item
+- Second item
+- Third item
+```
+
+Result:
+
+- First item
+- Second item
+- Third item
+
+=== Nested Lists
+
+Indent with additional hyphens:
+
+```
+- Parent item
+  - Child item 1
+  - Child item 2
+- Another parent
+```
+
+Result:
+
+- Parent item
+  - Child item 1
+  - Child item 2
+- Another parent
+
+=== Definition Lists
+
+Create key-value pairs:
+
+```
+Term:: Definition of the term
+Another Term:: Its definition
+```
+
+Result:
+
+Term:: Definition of the term
+Another Term:: Its definition
+
+=== Ordered Lists
+
+Use dots and numbers:
+
+```
+. First item
+. Second item
+. Third item
+```
+
+Result:
+
+. First item
+. Second item
+. Third item
+
+== Admonitions (Call-out Blocks)
+
+=== NOTE
+
+Use for general information:
+
+```
+NOTE: This is important information that readers should be aware of.
+```
+
+Result:
+
+NOTE: This is important information that readers should be aware of.
+
+=== TIP
+
+Use for recommended approaches:
+
+```
+TIP: This type of block means that the approach presented is a recommended one.
+```
+
+Result:
+
+TIP: This type of block means that the approach presented is a recommended one.
+
+=== WARNING
+
+Use for cautions and warnings:
+
+```
+WARNING: This type of block means that the approach presented is not a recommended one.
+```
+
+Result:
+
+WARNING: This type of block means that the approach presented is not a recommended one.
+
+=== IMPORTANT
+
+Use for critical information:
+
+```
+IMPORTANT: This is critical information that must not be overlooked.
+```
+
+Result:
+
+IMPORTANT: This is critical information that must not be overlooked.
+
+=== CAUTION
+
+Use for potential hazards:
+
+```
+CAUTION: Exercise caution when proceeding with this action.
+```
+
+Result:
+
+CAUTION: Exercise caution when proceeding with this action.
+
+== Links and References
+
+=== External Links
+
+Create hyperlinks:
+
+```
+link:https://example.com[Link Text]
+```
+
+Result:
+
+link:https://example.com[Link Text]
+
+=== Cross-References
+
+Reference sections within the document:
+
+```
+<<ways-of-working>>
+```
+
+This creates a link to the section with the anchor `[#ways-of-working]`.
+
+=== Footnotes
+
+Add notes at the bottom of the page:
+
+```
+This is some text.footnote:[https://example.com/resource]
+```
+
+== Images
+
+=== Basic Image Inclusion
+
+```
+image::function-oriented-structure.svg[pdfwidth=60%,align="center"]
+```
+
+Options:
+- `pdfwidth=60%` - controls width in PDF output
+- `align="center"` - centers the image
+- `alt="Alternative text"` - alt text for accessibility
+
+== Tables
+
+=== Basic Table
+
+```
+[cols="1,.^4", frame="none", grid="none"]
+|===
+| Column 1 | Column 2
+| Data 1   | Data 2
+|===
+```
+
+=== Table with Multiple Columns
+
+```
+[cols="1,2,1,1,1,2"]
+|===
+|Header 1 |Header 2 |Header 3 |Header 4 |Header 5 |Header 6
+|Data 1   |Data 2   |Data 3   |Data 4   |Data 5   |Data 6
+|===
+```
+
+=== Table Options
+
+- `[cols="..."]` - defines column widths and alignment
+  - `1` - equal width
+  - `.^` - center alignment
+  - `^` - center alignment
+  - `<` - left alignment
+  - `>` - right alignment
+- `frame="none"` - removes outer border
+- `grid="none"` - removes internal grid lines
+- `frame="all"` - shows all borders
+
+=== Combining Images and Text in Tables
+
+Create resource blocks with QR codes:
+
+```
+[cols="1,.^4", frame="none", grid="none"]
+|===
+|qrcode:https://example.com[format="png", xdim=2]
+|Find links to further reading and resources on:
+https://example.com
+|===
+```
+
+== Blocks
+
+=== Delimited Blocks
+
+==== Quote Blocks
+
+```
+[quote]
+____
+This is a quote block.
+It can span multiple lines.
+____
+```
+
+==== Literal Blocks
+
+```
+....
+Literal text with preserving whitespace
+    and indentation
+....
+```
+
+==== Example Blocks
+
+```
+====
+This is an example block.
+====
+```
+
+Result:
+
+====
+This is an example block.
+====
+
+== Special Formatting
+
+=== Line Breaks
+
+Use the `[%hardbreaks]` option to preserve line breaks:
+
+```
+[%hardbreaks]
+— PM: First line of dialogue
+— Director: Second line of dialogue
+```
+
+Result:
+
+[%hardbreaks]
+— PM: First line of dialogue
+— Director: Second line of dialogue
+
+=== Document Attributes
+
+Define and use attributes:
+
+```
+:author: Your Name
+:revdate: 28.10.2025
+:revnumber: v0.3
+:title: Document Title
+:subtitle: A subtitle
+```
+
+Use attributes with curly braces:
+
+```
+= {title}
+{author}
+```
+
+=== Substitutions
+
+Create semantic markup:
+
+```
+((keep the lights on))
+```
+
+This creates index terms and semantic markers.
+
+== Mathematical Notation
+
+=== Using STEM (Science, Technology, Engineering, Math)
+
+Enable STEM processing in document header:
+
+```
+:stem: latexmath
+```
+
+Then use in your content:
+
+```
+stem:[# tasks in a month = \text{(}N-1\text{)} \cdot \frac{20}{\text{Cycle Time}}]
+```
+
+Result:
+
+stem:[# tasks in a month = \text{(}N-1\text{)} \cdot \frac{20}{\text{Cycle Time}}]
+
+Inline math:
+
+```
+stem:[\frac{5 incidents}{4 weeks} = 1.25]
+```
+
+Result:
+
+stem:[\frac{5 incidents}{4 weeks} = 1.25]
+
+== Includes and Modular Documents
+
+=== Include Files
+
+Include other AsciiDoc files:
+
+```
+include::source/front_matter/index.adoc[]
+```
+
+This includes the content of the specified file.
+
+=== Conditional Includes
+
+Conditionally include content:
+
+```
+include::optional_section.adoc[]
+```
+
+Comment out with `//`:
+
+```
+// include::about_dunya.adoc[]
+```
+
+== Comments
+
+=== Single-line Comments
+
+```
+// This is a comment and won't appear in output
+```
+
+=== Multi-line Comments
+
+```
+////
+This is a block comment.
+It can span multiple lines.
+Everything inside is hidden from output.
+////
+```
+
+== Document Metadata and Configuration
+
+=== Common Attributes
+
+```
+:doctype: book
+:toc: macro
+:toc-title: Contents
+:toclevels: 3
+:sectlinks:
+:sectnums:
+:sectnumlevels: 2
+:xrefstyle: short
+:icons: font
+:source-highlighter: rouge
+:source-language: elixir
+:imagesdir: assets
+:leveloffset: +0
+:listing-caption: Listing
+:partnums:
+:pdfmark: true
+:reproducible:
+:stem: latexmath
+```
+
+=== Title Page Attributes
+
+```
+:front-image: assets/cover_3.png
+:back-image: assets/back-cover.png
+:copyright: "2025, Your Name"
+:description: "Book description"
+:keywords: "keyword1, keyword2, keyword3"
+```
+
+=== PDF Generation Attributes
+
+```
+:pdf-fontsdir: {docdir}/fonts
+:pdf-themesdir: {docdir}/themes
+:pdf-theme: v6.yml
+:rouge-style: catppuccin-mocha
+```
+
+== Practical Examples from Your Project
+
+=== Example 1: Section with Anchor and Content
+
+```
+[#company-characteristics]
+=== Characteristics of the company that impact your role
+
+The job title "engineering manager" (EM) can vary widely between companies.
+In some, an EM might oversee a large team of 30+ people, while in others,
+they may lead a small team and focus heavily on hands-on work.
+```
+
+=== Example 2: Numbered List with Bold Terms
+
+```
+. *Is it relevant and timely?* A good optimization target should address
+  a current and pressing need. Prioritize improvements that tackle urgent
+  issues over those that are merely desirable.
+
+. *Is it measurable?* Without a way to track progress, it's impossible
+  to know if your efforts are actually making a difference.
+```
+
+=== Example 3: Mixed Content Block
+
+```
+==== Industry
+
+The industry might impose constraints that shape how the company operates.
+For example, in the healthcare industry, both small startups and big
+enterprises are subject to legislation and no matter the size, companies
+have to go through the scrutiny of external audits.
+
+image::industry-diagram.svg[pdfwidth=60%,align="center"]
+
+Be aware of the industry constraints:
+
+- Compliance requirements
+- Regulatory deadlines
+- Safety standards
+```
+
+=== Example 4: NOTE Block with Link
+
+```
+NOTE: We've found that documenting architectural decisions helps
+establish common approaches. Look at
+link:https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html[Architecture Decision Records Process]
+for practical steps.
+```
+
+=== Example 5: Complex Table with Nested Content
+
+```
+[cols="1,2,1,1,1,2"]
+|===
+|Aspect |Description |Pro |Con |Rating |Notes
+
+|Performance
+|How fast the system operates
+|Improves user experience
+|May require investment
+|High
+|Critical for user satisfaction
+|===
+```
+
+== Tips and Best Practices from Your Project
+
+* Use anchors (`[#anchor-name]`) extensively for cross-referencing
+* Combine images with text for visual communication
+* Use admonitions (NOTE, TIP, WARNING) to highlight important information
+* Create semantic markup with `((term))` for index entries
+* Include external resources with tables combining text and QR codes
+* Use STEM notation for mathematical formulas
+* Keep sections and subsections well-organized with consistent levels
+* Comment out sections with `//` for work in progress
+* Use includes to modularize large documents
+* Apply consistent attribute usage across the document
+
+== Quick Reference Cheat Sheet
+
+|===
+|Element |Syntax |Result
+
+|Bold
+|`*text*`
+|*text*
+
+|Italic
+|`_text_`
+|_text_
+
+|Monospace
+|`\`text\``
+|`text`
+
+|Link
+|`link:url[text]`
+|link:url[text]
+
+|Heading
+|`== Heading`
+|Heading (Level 1)
+
+|Unordered List
+|`- item`
+|Bullet list
+
+|Ordered List
+|`1. item`
+|Numbered list
+
+|Image
+|`image::path.png[]`
+|Embedded image
+
+|NOTE
+|`NOTE: text`
+|Call-out block
+
+|Anchor
+|`[#anchor-name]`
+|Reference point
+
+|Cross-ref
+|`<<anchor-name>>`
+|Internal link
+
+|Footnote
+|`text.footnote:[url]`
+|Numbered reference
+
+|STEM
+|`stem:[formula]`
+|Math notation
+
+|===
