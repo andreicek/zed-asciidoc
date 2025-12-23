@@ -6,12 +6,6 @@ authors = ["Dunya Kirkali <dunyakirkali@gmail.com>", "Andrei Zvonimir Crnkovic <
 description = "Support for AsciiDoc syntax"
 repository = "https://github.com/dunyakirkali/zed-asciidoc"
 
-[grammars.asciidoc_inline]
-repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
-commit = "0ecc13042b7352ddc3f7b8b31432e262711d44e4"
-path = "tree-sitter-asciidoc_inline"
-
 [grammars.asciidoc]
-repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
-commit = "0ecc13042b7352ddc3f7b8b31432e262711d44e4"
-path = "tree-sitter-asciidoc"
+repository = "https://github.com/louiss0/tree-sitter-asciidoc"
+commit = "356628c20560416d30de511a7098a3dfca3f8cc1"
