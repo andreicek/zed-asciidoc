@@ -1,0 +1,13 @@
+= Document with All Features
+
+This demonstrates *bold*, _italic_, `code`, ^super^, and ~sub~ formatting.
+
+Autolinks work: https://asciidoc.org and https://example.com[custom text].
+
+References: <<introduction>>, xref:other.adoc[Other Document], {version}
+
+Footnotes: text footnote:[This is a footnote] and refs footnoteref:ref1[]
+
+Macros: kbd:[Ctrl+C], btn:[Save], stem:[E = mc^2], [.highlight]#important#
+
+Inline anchor: [[bookmark,Bookmarked Section]] for later reference.
