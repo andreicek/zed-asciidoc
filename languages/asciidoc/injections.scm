@@ -3,7 +3,7 @@
     keyword: (source_attribute_keyword)
     language: (source_language) @language)
   content: (block_content) @injection.content
-  (#set! injection.language language)
+  (#set! injection.language @language)
   (#set! injection.include-children))
 
 (listing_block
