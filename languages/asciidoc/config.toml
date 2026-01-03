@@ -6,5 +6,5 @@ brackets = [
     { start = "*", end = "*", close = true, newline = false },
     { start = "`", end = "`", close = true, newline = false },
     { start = "_", end = "_", close = true, newline = false },
-    { start = "#", end = "#", close = true, newline = false },
+    { start = "#", end = "#", close = false, newline = false },
 ]
