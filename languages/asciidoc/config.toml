@@ -3,8 +3,12 @@ grammar = "asciidoc"
 path_suffixes = ["asciidoc", "adoc"]
 line_comments = ["// "]
 brackets = [
-    { start = "*", end = "*", close = true, newline = false },
-    { start = "`", end = "`", close = true, newline = false },
-    { start = "_", end = "_", close = true, newline = false },
-    { start = "#", end = "#", close = false, newline = false },
+  { start = "*", end = "*", close = true, newline = false },
+  { start = "`", end = "`", close = true, newline = false },
+  { start = "_", end = "_", close = true, newline = false },
+  { start = "#", end = "#", close = false, newline = false },
+  { start = "{", end = "}", close = true, newline = false },
+  { start = "[", end = "]", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "<", end = ">", close = true, newline = false },
 ]
