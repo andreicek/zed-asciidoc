@@ -2,7 +2,15 @@
 
 This extension adds support for the link:https://asciidoc.org/[AsciiDoc] language for Zed.
 
-It is based on link:https://github.com/cathaysia/tree-sitter-asciidoc/[tree-sitter-asciidoc].
+It is based on link:https://github.com/louiss0/tree-sitter-asciidoc/[tree-sitter-asciidoc].
+
+== Features
+
+- Full syntax highlighting for AsciiDoc documents
+- Automatic indentation support for blocks and lists
+- Text object support for vim-style operations (e.g., `dib` for delete inner block)
+- Code injection support for embedded code blocks
+- Proper line comment handling
 
 == Development
 
@@ -11,23 +19,28 @@ It is based on link:https://github.com/cathaysia/tree-sitter-asciidoc/[tree-sitt
 ----
 zed-asciidoc/
 ├── languages/
-│   ├── asciidoc/
-│   │   ├── highlights.scm      # Block-level syntax highlighting
-│   │   ├── injections.scm      # Grammar injections
-│   │   └── config.toml
-│   └── asciidoc_inline/
-│       ├── highlights.scm      # Inline syntax highlighting
-│       ├── injections.scm      # Inline grammar injections
-│       └── config.toml
-└── extension.toml              # Extension configuration
+│   └── asciidoc/
+│       ├── config.toml         # Language configuration
+│       ├── highlights.scm      # Syntax highlighting rules
+│       ├── injections.scm      # Grammar injections for code blocks
+│       ├── indents.scm         # Auto-indentation rules
+│       └── textobjects.scm     # Text object definitions
+├── priv/                       # Private/internal files
+├── extension.toml              # Extension configuration
+├── LICENSE                     # License file
+└── README.adoc                 # This file
 ----
 
 === Contributing
 
-When contributing changes to highlight queries:
+When contributing changes:
 
-1. Make changes to the appropriate `.scm` files in `languages/asciidoc/` or `languages/asciidoc_inline/`
-2. Verify highlighting manually in Zed
+1. Make changes to the appropriate `.scm` files in `languages/asciidoc/`:
+   - `highlights.scm` for syntax highlighting rules
+   - `injections.scm` for code injection and embedded language support
+   - `indents.scm` for automatic indentation behavior
+   - `textobjects.scm` for vim-style text object support
+2. Verify changes manually in Zed
 3. Submit a pull request
 
 == License
