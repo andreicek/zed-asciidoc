@@ -140,5 +140,10 @@
     "prefix": "line-through",
     "body": "[.line-through]#${1:line-through text}#",
     "description": "Insert a line-through text"
+  },
+  "Insert todo": {
+    "prefix": "todo",
+    "body": "// TODO: ${1:todo text}",
+    "description": "Insert todo"
   }
 }
