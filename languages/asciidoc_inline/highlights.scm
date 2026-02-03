@@ -3,7 +3,7 @@
 ;   (passthrough)
 ; ] @markup.raw @nospell
 
-(emphasis) @emphasis
+(emphasis) @emphasis.strong
 
 (ltalic) @emphasis
 
