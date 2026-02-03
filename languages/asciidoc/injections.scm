@@ -1,10 +1,8 @@
 ((paragraph) @injection.content
-  (#set! injection.include-children)
-  (#set! injection.language "asciidoc_inline"))
+  (#set! injection.language "AsciiDoc Inline"))
 
 ((line) @injection.content
-  (#set! injection.include-children)
-  (#set! injection.language "asciidoc_inline"))
+  (#set! injection.language "AsciiDoc Inline"))
 
 ; Inject comment
 ((line_comment) @injection.content
