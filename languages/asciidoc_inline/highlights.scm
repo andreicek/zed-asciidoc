@@ -3,7 +3,7 @@
 ;   (passthrough)
 ; ] @markup.raw @nospell
 
-(emphasis) @emphasis
+(emphasis) @emphasis.strong
 
 (ltalic) @emphasis
 
@@ -21,8 +21,8 @@
   "]"
   "{"
   "}"
-  "<<" @punctuation.bracket
-  ">>" @punctuation.bracket
+  "<<"
+  ">>"
 ] @punctuation.bracket
 
 ":" @punctuation.delimiter
