@@ -48,7 +48,8 @@
   (listing_block_end_marker)
   (literal_block_marker)
   (passthrough_block_marker)
-  (quoted_block_marker)
+  (quoted_block_start_marker)
+	(quoted_block_end_marker)
   (ntable_block_marker)
   (callout_marker)
 ] @punctuation.special
