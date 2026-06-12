@@ -4,16 +4,18 @@ path_suffixes = ["adoc", "asciidoc", "ad", "asc"]
 line_comments = ["// "]
 block_comment = ["////", "////"]
 brackets = [
-  { start = "*", end = "*", close = true, newline = false },
-  { start = "`", end = "`", close = true, newline = false },
-  { start = "_", end = "_", close = true, newline = false },
-  { start = "#", end = "#", close = false, newline = false },
-  { start = "{", end = "}", close = true, newline = false },
-  { start = "[", end = "]", close = true, newline = false },
-  { start = "(", end = ")", close = true, newline = false },
-  { start = "<", end = ">", close = true, newline = false },
-  { start = "^", end = "^", close = true, newline = false },
-  { start = "~", end = "~", close = true, newline = false },
+  { start = "\"", end = "\"", close = true,  newline = false },
+  { start = "'",  end = "'",  close = true,  newline = false },
+  { start = "*",  end = "*",  close = true,  newline = false },
+  { start = "`",  end = "`",  close = true,  newline = false },
+  { start = "_",  end = "_",  close = true,  newline = false },
+  { start = "#",  end = "#",  close = false, newline = false },
+  { start = "{",  end = "}",  close = true,  newline = false },
+  { start = "[",  end = "]",  close = true,  newline = false },
+  { start = "(",  end = ")",  close = true,  newline = false },
+  { start = "<",  end = ">",  close = true,  newline = false },
+  { start = "^",  end = "^",  close = true,  newline = false },
+  { start = "~",  end = "~",  close = true,  newline = false },
 ]
 tab_size = 2
 hard_tabs = false
