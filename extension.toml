@@ -1,10 +1,13 @@
 id = "asciidoc"
 name = "AsciiDoc"
-version = "0.5.2"
+version = "0.6.0"
 schema_version = 1
-authors = ["Dunya Kirkali <dunyakirkali@gmail.com>"]
-description = "Support for AsciiDoc syntax"
-repository = "https://github.com/dunyakirkali/zed-asciidoc"
+authors = [
+    "Dunya Kirkali <dunyakirkali@gmail.com>",
+    "AMDphreak <https://github.com/AMDphreak>",
+]
+description = "AsciiDoc syntax highlighting, snippets, and browser HTML preview"
+repository = "https://github.com/antora-supplemental/zed-asciidoc"
 snippets = "./snippets/asciidoc.json"
 
 [grammars.asciidoc_inline]
@@ -16,3 +19,7 @@ path = "tree-sitter-asciidoc_inline"
 repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
 commit = "dd042737a453599bc851b7338d9222d3bd35df53"
 path = "tree-sitter-asciidoc"
+
+[language_servers.asciidoc-lsp]
+name = "AsciiDoc LSP"
+languages = ["AsciiDoc"]

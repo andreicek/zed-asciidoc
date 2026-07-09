@@ -1,0 +1,25 @@
+{
+  "name": "asciidoc-lsp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AsciiDoc language server: browser HTML preview via window/showDocument",
+  "bin": {
+    "asciidoc-lsp": "./dist/server.js"
+  },
+  "scripts": {
+    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --outfile=dist/server.js --banner:js=\"#!/usr/bin/env node\"",
+    "start": "node dist/server.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "asciidoctor": "^3.0.4",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3"
+  }
+}
