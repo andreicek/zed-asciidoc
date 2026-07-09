@@ -2,7 +2,66 @@
 
 This extension adds support for the link:https://asciidoc.org/[AsciiDoc] language for Zed.
 
+Fork maintained at link:https://github.com/antora-supplemental/zed-asciidoc[antora-supplemental/zed-asciidoc]
+(upstream: link:https://github.com/dunyakirkali/zed-asciidoc[dunyakirkali/zed-asciidoc]).
+
 It is based on link:https://github.com/cathaysia/tree-sitter-asciidoc/[tree-sitter-asciidoc].
+
+== Features
+
+* Syntax highlighting (tree-sitter block + inline grammars)
+* Snippets
+* **Browser HTML preview** (workaround until Zed has an in-editor webview/preview API)
+* **Engine choice** via `settings.json` (tree-sitter / Asciidoctor.js / asciidoctor-d)
+
+Open an `.adoc` buffer, run a code action, and choose
+`Preview AsciiDoc in browser`. The language server converts HTML and asks Zed
+to open it via LSP `window/showDocument` (`external: true`).
+
+Requires Node.js on `PATH` for the bundled LSP. In-editor preview is blocked by
+Zed today; see link:https://github.com/zed-industries/zed/issues/21208[zed#21208]
+and link:https://github.com/zed-industries/zed/discussions/27163[discussion #27163].
+
+== Engine settings
+
+Zed has no extension options GUI yet — configure in `settings.json`:
+
+[source,json]
+----
+{
+  "lsp": {
+    "asciidoc-lsp": {
+      "settings": {
+        "engine": "asciidoctor-js"
+      }
+    }
+  }
+}
+----
+
+`engine` values:
+
+* `tree-sitter` — highlighting only; preview disabled
+* `asciidoctor-js` — preview with Asciidoctor.js (default)
+* `asciidoctor-d` — preview with the native
+  link:https://github.com/dlang-supplemental/asciidoctor-d[asciidoctor-d] CLI
+  (downloaded from GitHub Releases, or set `asciidoctorDPath`)
+
+Optional absolute path override:
+
+[source,json]
+----
+{
+  "lsp": {
+    "asciidoc-lsp": {
+      "settings": {
+        "engine": "asciidoctor-d",
+        "asciidoctorDPath": "C:/tools/asciidoctor-d.exe"
+      }
+    }
+  }
+}
+----
 
 == Development
 
@@ -19,9 +78,20 @@ zed-asciidoc/
 │       ├── highlights.scm      # Inline syntax highlighting
 │       ├── injections.scm      # Inline grammar injections
 │       └── config.toml
+├── lsp/                        # Node LSP (Asciidoctor.js → browser preview)
+├── src/lib.rs                  # Zed extension: starts the language server
 ├── snippets/
 │   └── asciidoc.json           # Snippets
 └── extension.toml              # Extension configuration
+----
+
+=== Building the language server
+
+[source,bash]
+----
+cd lsp
+pnpm install
+pnpm build
 ----
 
 === Contributing

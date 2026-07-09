@@ -1,2 +1,4 @@
 target/
 grammars/
+lsp/node_modules/
+lsp/*.tsbuildinfo
