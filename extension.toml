@@ -1,6 +1,6 @@
 id = "asciidoc"
 name = "AsciiDoc"
-version = "0.5.2"
+version = "0.5.3"
 schema_version = 1
 authors = ["Dunya Kirkali <dunyakirkali@gmail.com>"]
 description = "Support for AsciiDoc syntax"
@@ -9,10 +9,10 @@ snippets = "./snippets/asciidoc.json"
 
 [grammars.asciidoc_inline]
 repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
-commit = "dd042737a453599bc851b7338d9222d3bd35df53"
+commit = "e0710115e7b060ce6681b5182a49a792813006f1"
 path = "tree-sitter-asciidoc_inline"
 
 [grammars.asciidoc]
 repository = "https://github.com/cathaysia/tree-sitter-asciidoc"
-commit = "dd042737a453599bc851b7338d9222d3bd35df53"
+commit = "e0710115e7b060ce6681b5182a49a792813006f1"
 path = "tree-sitter-asciidoc"
