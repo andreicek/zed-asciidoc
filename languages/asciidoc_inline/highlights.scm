@@ -5,7 +5,7 @@
 
 (emphasis) @emphasis.strong
 
-(ltalic) @emphasis
+(italic) @emphasis
 
 (highlight) @emphasis
 
