@@ -83,8 +83,9 @@
 (document_attr
   (attr_name) @property)
 
-(element_attr
-  (attr_value) @attribute)
+(positional_attr) @attribute
+(attribute_name) @attribute
+(attribute_value) @variable.parameter
 
 (block_title
   (block_title_marker) @punctuation.special) @attribute
